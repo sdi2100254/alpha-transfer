@@ -4,10 +4,11 @@ export default function Home() {
   return (
     <main className="relative min-h-screen">
       
-      {/* 1. FIXED BACKGROUND LAYER (The Rhodes Map) 
-          Stays fixed. We currently have a dark gray placeholder.
+      {/* 1. FIXED BACKGROUND LAYER 
+          FIX: We set this to 'z-0'. 
+          This puts the map ON TOP of the black body background.
       */}
-      <div className="fixed inset-0 z-[-1] opacity-40">
+      <div className="fixed inset-0 z-0">
         <Image
           src="/rhodes-map.jpg"
           alt="Map of Rhodes Background"
@@ -18,10 +19,10 @@ export default function Home() {
       </div>
 
       {/* 2. HERO SECTION 
-          FIX: Changed 'bg-alpha-black' to 'bg-black/30' (30% opacity).
-          Now the fixed map layer is visible behind the text!
+          FIX: We set this to 'z-10' (relative).
+          This forces the text layer to sit ON TOP of the map layer.
       */}
-      <section className="flex min-h-screen flex-col items-center justify-center bg-black/30 px-4 text-center backdrop-blur-[2px] relative z-0">
+      <section className="relative z-10 flex min-h-screen flex-col items-center justify-center bg-black/30 px-4 text-center backdrop-blur-[2px]">
         <h1 className="font-heading text-5xl font-bold tracking-wider text-white md:text-7xl">
           ALPHA <span className="text-alpha-brown">TRANSFER</span>
         </h1>
@@ -32,9 +33,9 @@ export default function Home() {
       </section>
 
       {/* 3. MAIN CONTENT (Warm White) 
-          This section scrolls UP and covers the hero/map.
+          This layer (z-10) will slide over the fixed map as you scroll.
       */}
-      <section className="relative w-full bg-alpha-warm px-6 py-24 text-alpha-black z-10">
+      <section className="relative z-10 w-full bg-alpha-warm px-6 py-24 text-alpha-black">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-6 font-heading text-3xl font-bold text-alpha-black md:text-4xl">
             Experience the <span className="text-alpha-brown">Luxury</span>
