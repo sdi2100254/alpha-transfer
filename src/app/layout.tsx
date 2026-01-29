@@ -25,8 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      {/* FIX: Added 'bg-alpha-black' back to the className below */}
-      <body className={`${inter.variable} ${montserrat.variable} font-sans antialiased bg-alpha-black text-alpha-warm`}>
+      {/* Safe to ignore extension-injected body attributes to prevent hydration mismatches. */}
+      <body
+        suppressHydrationWarning
+        className={`${inter.variable} ${montserrat.variable} font-sans antialiased bg-alpha-black text-alpha-warm`}
+      >
         <Navbar /> 
         {children}
       </body>
