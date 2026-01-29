@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${montserrat.variable} font-sans antialiased bg-alpha-black text-alpha-warm`}>
+      <body className={`${inter.variable} ${montserrat.variable} font-sans antialiased text-alpha-warm`}>
         {/* Navbar is now properly placed at the top of the body */}
         <Navbar /> 
         {children}

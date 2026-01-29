@@ -13,7 +13,7 @@ export default function Home() {
           FIX: Changed 'bg-alpha-black' to 'bg-black/30' (30% opacity).
           Now the fixed map layer is visible behind the text!
       */}
-      <section className="flex min-h-screen flex-col items-center justify-center bg-black/30 px-4 text-center backdrop-blur-[2px]">
+      <section className="flex min-h-screen flex-col items-center justify-center bg-black/30 px-4 text-center backdrop-blur-[2px] relative z-0">
         <h1 className="font-heading text-5xl font-bold tracking-wider text-white md:text-7xl">
           ALPHA <span className="text-alpha-brown">TRANSFER</span>
         </h1>
@@ -26,7 +26,7 @@ export default function Home() {
       {/* 3. MAIN CONTENT (Warm White) 
           This section scrolls UP and covers the hero/map.
       */}
-      <section className="relative w-full bg-alpha-warm px-6 py-24 text-alpha-black">
+      <section className="relative w-full bg-alpha-warm px-6 py-24 text-alpha-black relative z-10">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-6 font-heading text-3xl font-bold text-alpha-black md:text-4xl">
             Experience the <span className="text-alpha-brown">Luxury</span>
