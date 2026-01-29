@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
+import Navbar from "@/components/Navbar"; // <--- IMPORT ADDED
 import "./globals.css";
 
-// 1. Configure the fonts
 const inter = Inter({ 
   subsets: ["latin"], 
   variable: "--font-inter" 
@@ -25,8 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      {/* 2. Apply font variables to the body */}
       <body className={`${inter.variable} ${montserrat.variable} font-sans antialiased bg-alpha-black text-alpha-warm`}>
+        {/* Navbar is now properly placed at the top of the body */}
+        <Navbar /> 
         {children}
       </body>
     </html>

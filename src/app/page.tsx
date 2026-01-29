@@ -3,21 +3,21 @@ export default function Home() {
     <main className="relative min-h-screen">
       
       {/* 1. FIXED BACKGROUND LAYER (The Rhodes Map) 
-          This layer stays still while you scroll. 
-          Note: We added a gray placeholder color until you add an image. 
+          Stays fixed. We currently have a dark gray placeholder.
       */}
       <div className="fixed inset-0 z-[-1] bg-gray-900 opacity-40">
-        {/* Later, we will add: className="bg-[url('/map-bg.jpg')] bg-cover bg-center" */}
+        {/* TODO: Add your map image here later */}
       </div>
 
-      {/* 2. HERO SECTION (Full Screen) 
-          Solid Black background to start.
+      {/* 2. HERO SECTION 
+          FIX: Changed 'bg-alpha-black' to 'bg-black/30' (30% opacity).
+          Now the fixed map layer is visible behind the text!
       */}
-      <section className="flex min-h-screen flex-col items-center justify-center bg-alpha-black px-4 text-center">
+      <section className="flex min-h-screen flex-col items-center justify-center bg-black/30 px-4 text-center backdrop-blur-[2px]">
         <h1 className="font-heading text-5xl font-bold tracking-wider text-white md:text-7xl">
           ALPHA <span className="text-alpha-brown">TRANSFER</span>
         </h1>
-        <p className="mt-4 font-light tracking-[0.2em] text-gray-400">
+        <p className="mt-4 font-light tracking-[0.2em] text-gray-300">
           RHODES VIP TRANSIT
         </p>
         <div className="mt-12 h-[1px] w-24 bg-alpha-brown"></div>
@@ -38,7 +38,6 @@ export default function Home() {
             unmatched level of comfort and style.
           </p>
 
-          {/* Spacer to demonstrate scrolling */}
           <div className="mt-12 h-64 w-full rounded-xl bg-gray-200 shadow-inner flex items-center justify-center text-gray-400">
             Booking Form Placeholder
           </div>
