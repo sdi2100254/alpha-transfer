@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
-import Navbar from "@/components/Navbar"; // <--- IMPORT ADDED
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -25,8 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${montserrat.variable} font-sans antialiased text-alpha-warm`}>
-        {/* Navbar is now properly placed at the top of the body */}
+      {/* FIX: Added 'bg-alpha-black' back to the className below */}
+      <body className={`${inter.variable} ${montserrat.variable} font-sans antialiased bg-alpha-black text-alpha-warm`}>
         <Navbar /> 
         {children}
       </body>
