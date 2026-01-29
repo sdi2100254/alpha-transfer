@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main className="relative min-h-screen">
@@ -5,8 +7,14 @@ export default function Home() {
       {/* 1. FIXED BACKGROUND LAYER (The Rhodes Map) 
           Stays fixed. We currently have a dark gray placeholder.
       */}
-      <div className="fixed inset-0 z-[-1] bg-gray-900 opacity-40">
-        {/* TODO: Add your map image here later */}
+      <div className="fixed inset-0 z-[-1] opacity-40">
+        <Image
+          src="/rhodes-map.jpg"
+          alt="Map of Rhodes Background"
+          fill
+          priority
+          className="object-cover opacity-50 grayscale"
+        />
       </div>
 
       {/* 2. HERO SECTION 
